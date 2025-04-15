@@ -144,7 +144,7 @@ async function connectToWhatsApp() {
             const memberCount = groupMetadata.participants.length;
             if (update.action === 'add') {
                 const welcomeMessage = {
-                    text: `\`\`\`WELCOME MESSAGE BY AKANE MD\`\`\`\nWelcome dear @${participant.split('@')[0]}, to  ${groupName}! YOU ARE THE ${memberCount}th member.`,
+                    text: `\`\`\`WELCOME MESSAGE BY JAY MD\`\`\`\nWelcome dear @${participant.split('@')[0]}, to  ${groupName}! YOU ARE THE ${memberCount}th member.`,
                     contextInfo: {
                         mentionedJid: [participant],
                         externalAdReply: {
@@ -160,7 +160,7 @@ async function connectToWhatsApp() {
                 await rich.sendMessage(update.id, welcomeMessage);
             } else if (update.action === 'remove') {
                 const goodbyeMessage = {
-                    text: `\`\`\`GOOD BYE MESSAGE BY AKANE MD\`\`\`@${participant.split('@')[0]}. leaving ${groupName}\n [ *members update* ] ${memberCount} remaining`,
+                    text: `\`\`\`GOOD BYE MESSAGE BY JAY MD\`\`\`@${participant.split('@')[0]}. leaving ${groupName}\n [ *members update* ] ${memberCount} remaining`,
                     contextInfo: {
                         mentionedJid: [participant],
                         externalAdReply: {
@@ -349,4 +349,4 @@ return  rich.sendMessage(vb.chat, {poll: { name, values, selectableCount }})
 
     rich.ev.on('creds.update', saveCreds);
 }
-connectToWhatsApp()
+connectToWhatsApp();
